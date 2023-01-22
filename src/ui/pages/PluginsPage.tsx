@@ -90,14 +90,14 @@ function PluginCard({ plugin }: { plugin: PluginManifest; }) {
                         <Image source={getAssetId("img_account_sync_github_white")} />
                     </Pressable>
                 ] : []), 
-               ...(plugin.changelog ? [
+                ...(plugin.changelog ? [
                     <Pressable key="Changelog" style={styles.icons} onPress={() => Navigation.push(Page, {
                         name: plugin.name, 
                         children: plugins[plugin.name].changelog 
                     })}>
-                      <Image source={getAssetId("img_account_sync_github_white")}/>
+                        <Image source={getAssetId("img_account_sync_github_white")}/>
                     </Pressable>
-               ] : [])
+                ] : [])
             ]}
             buttons={buttons}
         />
