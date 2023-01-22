@@ -4,6 +4,7 @@ export interface PluginManifest {
     version: string;
     repo: string;
     authors?: Author[];
+    changelog?: string;
 }
 
 export interface Author {

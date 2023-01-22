@@ -89,7 +89,15 @@ function PluginCard({ plugin }: { plugin: PluginManifest; }) {
                     <Pressable key='repo' style={styles.icons} onPress={() => URLOpener.openURL(plugin.repo)}>
                         <Image source={getAssetId("img_account_sync_github_white")} />
                     </Pressable>
-                ] : []),
+                ] : []), 
+               ...(plugin.changelog ? [
+                    <Pressable key="Changelog" style={styles.icons} onPress={() => Navigation.push(Page, {
+                        name: plugin.name, 
+                        children: plugins[plugin.name].changelog 
+                    })}>
+                      <Image source={getAssetId("img_account_sync_github_white")}/>
+                    </Pressable>
+               ] : [])
             ]}
             buttons={buttons}
         />
